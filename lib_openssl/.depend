@@ -1,0 +1,243 @@
+ecs_ossl.o: ecdsa/ecs_ossl.c ecdsa/ecs_locl.h \
+ ecdsa/../include/secboot-ossl.h ecdsa/../include/ossl_typ.h \
+ ecdsa/../include/../bn/bn.h ecdsa/../include/../ec/ec.h \
+ ecdsa/../include/../ecdsa/ecdsa.h ecdsa/../include/../asn1/asn1.h \
+ ecdsa/../include/obj_mac.h ecdsa/../include/../ec/ec_lcl.h \
+ ecdsa/../include/stack.h ecdsa/../include/safestack.h \
+ ecdsa/../include/crypto.h ecdsa/../include/../err/err.h
+ec_lib.o: ec/ec_lib.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec_mult.o: ec/ec_mult.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec_key.o: ec/ec_key.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec_curve.o: ec/ec_curve.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec_cvt.o: ec/ec_cvt.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ecp_nist.o: ec/ecp_nist.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ecp_smpl.o: ec/ecp_smpl.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ecp_mont.o: ec/ecp_mont.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec2_smpl.o: ec/ec2_smpl.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec2_mult.o: ec/ec2_mult.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+ec_asn1.o: ec/ec_asn1.c ec/../include/secboot-ossl.h \
+ ec/../include/ossl_typ.h ec/../include/../bn/bn.h \
+ ec/../include/../ec/ec.h ec/../include/../ecdsa/ecdsa.h \
+ ec/../include/../asn1/asn1.h ec/../include/obj_mac.h \
+ ec/../include/../ec/ec_lcl.h ec/../include/stack.h \
+ ec/../include/safestack.h ec/../include/crypto.h \
+ ec/../include/../err/err.h
+bn_lib.o: bn/bn_lib.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_add.o: bn/bn_add.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_shift.o: bn/bn_shift.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_sqr.o: bn/bn_sqr.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_rand.o: bn/bn_rand.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_mod.o: bn/bn_mod.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_nist.o: bn/bn_nist.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_gf2m.o: bn/bn_gf2m.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_gcd.o: bn/bn_gcd.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_word.o: bn/bn_word.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_sqrt.o: bn/bn_sqrt.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_mul.o: bn/bn_mul.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_mont.o: bn/bn_mont.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_kron.o: bn/bn_kron.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_div.o: bn/bn_div.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_ctx.o: bn/bn_ctx.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_exp.o: bn/bn_exp.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_recp.o: bn/bn_recp.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_asm.o: bn/bn_asm.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+bn_print.o: bn/bn_print.c bn/bn_lcl.h bn/../include/secboot-ossl.h \
+ bn/../include/ossl_typ.h bn/../include/../bn/bn.h \
+ bn/../include/../ec/ec.h bn/../include/../ecdsa/ecdsa.h \
+ bn/../include/../asn1/asn1.h bn/../include/obj_mac.h \
+ bn/../include/../ec/ec_lcl.h bn/../include/stack.h \
+ bn/../include/safestack.h bn/../include/crypto.h \
+ bn/../include/../err/err.h
+sha256.o: sha/sha256.c sha/../include/secboot-ossl.h \
+ sha/../include/ossl_typ.h sha/../include/../bn/bn.h \
+ sha/../include/../ec/ec.h sha/../include/../ecdsa/ecdsa.h \
+ sha/../include/../asn1/asn1.h sha/../include/obj_mac.h \
+ sha/../include/../ec/ec_lcl.h sha/../include/stack.h \
+ sha/../include/safestack.h sha/../include/crypto.h \
+ sha/../include/../err/err.h sha/../include/sha.h \
+ sha/../include/md32_common.h
+zlib.o: zlib/zlib.c zlib/../include/zlib.h
+lib.o: lib.c include/secboot-ossl.h include/ossl_typ.h include/../bn/bn.h \
+ include/../ec/ec.h include/../ecdsa/ecdsa.h include/../asn1/asn1.h \
+ include/obj_mac.h include/../ec/ec_lcl.h include/stack.h \
+ include/safestack.h include/crypto.h include/../err/err.h include/sha.h \
+ ossl-api.h
+libstart.o: libstart.c include/secboot-ossl.h include/ossl_typ.h \
+ include/../bn/bn.h include/../ec/ec.h include/../ecdsa/ecdsa.h \
+ include/../asn1/asn1.h include/obj_mac.h include/../ec/ec_lcl.h \
+ include/stack.h include/safestack.h include/crypto.h \
+ include/../err/err.h include/sha.h ossl-api.h
