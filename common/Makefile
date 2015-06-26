@@ -81,6 +81,7 @@ endif
 ifdef CONFIG_POST
 COBJS-$(CONFIG_CMD_DIAG) += cmd_diag.o
 endif
+COBJS-$(CONFIG_CMD_FT_DIAG) += cmd_ft_diag.o
 COBJS-$(CONFIG_CMD_DISPLAY) += cmd_display.o
 COBJS-$(CONFIG_CMD_DTT) += cmd_dtt.o
 COBJS-$(CONFIG_ENV_IS_IN_EEPROM) += cmd_eeprom.o

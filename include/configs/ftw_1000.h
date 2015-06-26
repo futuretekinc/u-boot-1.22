@@ -106,6 +106,8 @@
 #define CONFIG_CMD_LOADB
 #define CONFIG_CMD_HTTP
 
+#define	CONFIG_CMD_NET_TEST
+
 /*
  * BOOTP options
  */
@@ -334,6 +336,8 @@
 	#define CONFIG_SYS_I2C_SPEED		100000//400000		/* I2C speed and slave address	*/
 	#define CONFIG_SYS_I2C_SLAVE		0x10
 #endif
+
+#define	CONFIG_CMD_FT_DIAG				1
 
 // If you intend to support "initramfs" style root file system (where
 // the rootfs is compiled into the kernel image), then you must define:

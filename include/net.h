@@ -357,7 +357,7 @@ extern int		NetState;		/* Network loop state		*/
 extern int		NetRestartWrap;		/* Tried all network devices	*/
 #endif
 
-typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, HTTP } proto_t;
+typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, HTTP, NET_TEST } proto_t;
 
 /* from net/net.c */
 extern char	BootFile[128];			/* Boot File name		*/
@@ -380,6 +380,13 @@ extern ushort CDPApplianceVLAN;
 #if defined(CONFIG_CMD_SNTP)
 extern IPaddr_t	NetNtpServerIP;			/* the ip address to NTP	*/
 extern int NetTimeOffset;			/* offset time from UTC		*/
+#endif
+
+#if defined(CONFIG_CMD_NET_TEST)
+extern ulong	NetTestPacketSize;			
+extern ulong	NetTestSendCount;
+extern ulong	NetTestRcvdCount;
+extern ulong	NetTestCount;			
 #endif
 
 /* Initialize the network adapter */

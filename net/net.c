@@ -185,6 +185,15 @@ IPaddr_t	NetNtpServerIP;		/* NTP server IP address		*/
 int		NetTimeOffset=0;	/* offset time from UTC			*/
 #endif
 
+#if defined(CONFIG_CMD_NET_TEST)
+IPaddr_t	NetTestCount = 10000;		
+ulong		NetTestPacketSize=1400;
+ulong		NetTestSendCount=0;
+ulong		NetTestRcvdCount=0;
+ulong		NetTestError;
+static void NetTestStart(void);
+#endif
+
 #ifdef CONFIG_NETCONSOLE
 void NcStart(void);
 int nc_input_packet(uchar *pkt, unsigned dest, unsigned src, unsigned len);
@@ -448,6 +457,11 @@ restart:
 #if defined(CONFIG_CMD_DNS)
 		case DNS:
 			DnsStart();
+			break;
+#endif
+#if defined(CONFIG_CMD_NET_TEST)
+		case NET_TEST:
+			NetTestStart();
 			break;
 #endif
 		default:
@@ -2059,3 +2073,111 @@ ushort getenv_VLAN(char *var)
 {
 	return (string_to_VLAN(getenv(var)));
 }
+
+#define IP_OFFS		0x1fff /* ip offset *= 8 */
+#if 1
+static ulong	NetTestSeqNo;
+static uchar  pBackupPkt[2048];
+
+static void
+NetTestTimeout (void)
+{
+	printf("\n");
+	eth_halt();
+	NetState = NETLOOP_FAIL;	/* we did not get the reply */
+}
+
+int NetTestSend(void)
+{
+	volatile uchar *pkt;
+	IP_t *pIP;
+
+	pkt = NetTxPacket;
+
+	pkt += NetSetEther (pkt, NetBcastAddr, PROT_IP);
+
+	pIP = (IP_t *) pkt;
+
+	NetSetIP((volatile uchar *)pIP, NetOurIP, 1234, 1024, NetTestPacketSize - (ETHER_HDR_SIZE + IP_HDR_SIZE));
+	memset((void *)&NetTxPacket[(ETHER_HDR_SIZE + IP_HDR_SIZE)], 
+			(uchar) NetTestSeqNo, 
+			NetTestPacketSize - (ETHER_HDR_SIZE + IP_HDR_SIZE));
+
+	memcpy(pBackupPkt, (void *)NetTxPacket, NetTestPacketSize);
+
+	NetTestSendCount++;
+	NetSetTimeout (10000UL, NetTestTimeout);
+	eth_send (NetTxPacket, NetTestPacketSize);
+
+	return 1;	/* waiting */
+}
+
+static void
+NetTestHandler (uchar * pkt, unsigned dest, unsigned src, unsigned len)
+{
+	volatile IP_t *ip = (volatile IP_t *)pkt;
+	
+	if (ip->ip_len != (NetTestPacketSize - (ETHER_HDR_SIZE + IP_HDR_SIZE)))
+	{
+		NetTestError++;
+	}
+	else if (memcmp(pkt, pBackupPkt, NetTestPacketSize) != 0)
+	{
+		NetTestError++;
+	}
+
+	NetTestRcvdCount++;
+	printf("\b\b\b\b\b%5lu", NetTestRcvdCount);
+
+	if (NetTestCount == 0)
+	{
+		if (ctrlc())
+		{
+			printf("\rNet Test : %5lu\n", NetTestRcvdCount);
+		}
+		else
+		{
+			NetTestSend();	
+		}
+	}
+	else 
+	{
+		if (NetTestSendCount < NetTestCount)
+		{
+			NetTestSend();	
+		}
+		else
+		{
+			printf("\rNet Test : %5lu/%5lu\n", NetTestRcvdCount, NetTestCount);
+			NetState = NETLOOP_SUCCESS;
+		}
+
+	}
+
+}
+
+static void NetTestStart(void)
+{
+#if defined(CONFIG_NET_MULTI)
+	printf ("Using %s device\n", eth_get_name());
+#endif	/* CONFIG_NET_MULTI */
+	NetTestSeqNo = 0;
+	NetTestError = 0;
+	NetTestSendCount = 0;
+	NetTestRcvdCount = 0;
+
+	NetSetHandler (NetTestHandler);
+
+	printf("Net Test Status\n");
+	if (NetTestCount == 0)
+	{
+		printf("\rNet Test : %5lu", NetTestRcvdCount);
+	}
+	else
+	{
+		printf("\rNet Test : %5lu/%5lu\b\b\b\b\b\b", NetTestRcvdCount, NetTestCount);
+	}
+	
+	NetTestSend();
+}
+#endif

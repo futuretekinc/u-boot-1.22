@@ -386,3 +386,55 @@ U_BOOT_CMD(
 );
 
 #endif	/* CONFIG_CMD_DNS */
+
+#if defined(CONFIG_CMD_NET_TEST)
+int do_net_test(cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
+{
+	if (argc == 3)
+	{
+		NetTestPacketSize = simple_strtol (argv[2], NULL, 10);
+	}
+
+	if (argc >= 2)
+	{
+		NetTestCount = simple_strtol (argv[1], NULL, 10);
+	}
+
+	if ((NetTestPacketSize > 1500) || (NetTestCount == 0))
+	{
+		printf("Invalid parameter\n");
+	
+		return	1;
+	}
+
+	printf("Net Test Configuration\n");
+	printf("%16s : %lu\n", "Loop Count", NetTestCount);
+	printf("%16s : %lu\n", "Packet Size", NetTestPacketSize);
+
+
+	if (NetLoop(NET_TEST) < 0) 
+	{
+		printf("\nfailed!\n");
+		return 1;
+	}
+	printf("\nsuccessfully finished!\n");
+
+
+	if (NetTestSendCount != 0)
+	{
+		ulong	ulErrorRate = (NetTestSendCount - NetTestRcvdCount) * 10000 / NetTestSendCount;
+		printf("Send Packets : %lu\n", NetTestSendCount);
+		printf("Rcvd Packets : %lu\n", NetTestRcvdCount);
+		printf("  Error Rate : %2lu.%02lu\n", ulErrorRate/100, ulErrorRate%100);
+	}
+
+	return 0;
+}
+
+U_BOOT_CMD(
+	net_test,	3,	1,	do_net_test,
+	"Network Test",
+	"[count] [size]"
+);
+#endif
+
